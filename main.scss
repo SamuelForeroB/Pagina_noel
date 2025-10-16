@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+/* === VARIABLES PERSONALIZADAS === */
+:root {
+  --color-primario: #ff0000; /* Rojo brillante (puedes cambiarlo por otro) */
+  --color-secundario: #ffffff;
+  --color-texto: #3f3f3f;
+  --color-hover: #cc0000;
+  --color-footer: #222222; /* Nuevo color del pie de página */
+}
+
+/* === GENERAL === */
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+}
+
+/* === MENÚ Y NAVEGACIÓN === */
+#menu li > a {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-primario) !important;
+}
+
+#menu form > button {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--color-primario) !important;
+  color: white;
+  border: none;
+}
+
+#menu form > button:hover {
+  background-color: var(--color-hover);
+}
+
+/* Barra superior (azul brillante original) */
+.header-top {
+  background-color: var(--color-primario) !important;
+  color: var(--color-secundario);
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* === IMÁGENES CAROUSEL === */
+.carrousel-item img {
+  max-height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+  #intro,
+  #equipo {
+    width: 90% !important;
+  }
+  #equipo p {
+    display: none;
+  }
+  .servicio-fila {
+    width: 100% !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .icono.wrap {
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+}
+
+/* === MAPA === */
+.mapa {
+  background: url(./imagenes/mapa.jpg) no-repeat center center;
+  background-size: contain;
+  width: 400%;
+  height: 500px;
+}
+
+#local {
+  /*background: #3f3f3f;*/
+  padding-bottom: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 70%;
+  margin-left: 0px;
+  padding-top: 10px;
+}
+
+@media (max-width: 1200px) {
+  #local {
+    flex-wrap: wrap;
+    padding-top: 30px;
+  }
+  .wrapper {
+    width: 70%;
+    margin: auto;
+    padding-top: 50px;
+  }
+}
+
+/* === SECCIÓN EQUIPO === */
+#numeros-local div {
+  padding: 0 20px 0 0;
+  height: 40px;
+}
+
+#numeros-local div:not(:last-child) {
+  border-right: 2px solid var(--color-texto);
+}
+
+#numeros-local div:not(:first-child) {
+  padding-left: 20px;
+}
+
+#numeros-local p {
+  margin: 0;
+}
+
+/* === FORMULARIO DE CONTACTO === */
+#seccion-contacto {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#bg-contacto {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+#bg-contacto svg {
+  transform: scaleY(1.4);
+  transform-origin: bottom;
+}
+
+#contenedor-formulario {
+  position: relative;
+  z-index: 10;
+  background: var(--color-secundario);
+  border-radius: 10px;
+  max-width: 500px;
+  margin-bottom: 0;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#titulo-formulario {
+  color: var(--color-texto);
+}
+
+/* === PIE DE PÁGINA (CORREGIDO) === */
+footer {
+  background-color: var(--color-footer) !important;
+  min-height: 100px;
+}
+
+footer p {
+  color: var(--color-secundario) !important;
+  text-align: center;
+}
+
+#iconos i {
+  font-size: 26px;
+  padding: 0 8px;
+  color: var(--color-secundario) !important;
+}
+
+/* === IMPORTACIÓN BOOTSTRAP (dejar al final) === */
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
